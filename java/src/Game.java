@@ -16,9 +16,7 @@ public class Game {
     }
 
     private void validateMove(char symbol, int x, int y) throws Exception {
-        if (isFirstMove()) {
-            validatePlayerXPlaysFirst(symbol);
-        }
+        validatePlayerXPlaysFirst(symbol);
         validatePlayersMoveIsNotRepeated(symbol);
         validatePlayerNotOverrideAlreadyPlayedTitle(x, y);
     }
@@ -36,7 +34,7 @@ public class Game {
     }
 
     private void validatePlayerXPlaysFirst(char symbol) throws InvalidFirstPlayerException {
-        if (symbol != 'X') {
+        if (isFirstMove() && symbol != 'X') {
             throw new InvalidFirstPlayerException();
         }
     }
