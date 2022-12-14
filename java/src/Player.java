@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 public enum Player {
-    NO_PLAYER(' ');
+    NO_PLAYER(' '), PLAYER_X('X'), PLAYER_O('O');
 
     private final char symbol;
 
