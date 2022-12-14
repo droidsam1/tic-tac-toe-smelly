@@ -6,9 +6,7 @@ public enum Players {
         this.playerSymbol = playerSymbol;
     }
 
-    private static final char NO_PLAYER = ' ';
-
     public static char getNoPlayer() {
-        return NO_PLAYER;
+        return NO_PLAYER_SYMBOL.playerSymbol;
     }
 }
