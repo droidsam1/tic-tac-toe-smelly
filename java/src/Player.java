@@ -10,7 +10,7 @@ public enum Player {
     }
 
     public static char getNoPlayer() {
-        return NO_PLAYER.symbol;
+        return NO_PLAYER.getSymbol();
     }
 
     public static Player from(char symbol) {

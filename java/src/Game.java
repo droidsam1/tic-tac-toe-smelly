@@ -8,7 +8,7 @@ public class Game {
 
     public Game() {
         board = new Board();
-        lastPlayedSymbol = Player.getNoPlayer();
+        lastPlayedSymbol = Player.NO_PLAYER.getSymbol();
     }
 
     public void Play(Player player, int x, int y) throws Exception {
@@ -30,7 +30,7 @@ public class Game {
     }
 
     private void validatePlayerNotOverrideAlreadyPlayedTitle(int x, int y) throws InvalidPosition {
-        if (board.TileAt(x, y).Symbol != Player.getNoPlayer()) {
+        if (board.TileAt(x, y).Symbol != Player.NO_PLAYER.getSymbol()) {
             throw new InvalidPosition();
         }
     }
@@ -48,35 +48,41 @@ public class Game {
     }
 
     private boolean isFirstMove() {
-        return lastPlayedSymbol == Player.getNoPlayer();
+        return lastPlayedSymbol == Player.NO_PLAYER.getSymbol();
     }
 
     private char Winner() {
         //if the positions in first row are taken
-        if (board.TileAt(0, 0).Symbol != Player.getNoPlayer() && board.TileAt(0, 1).Symbol != Player.getNoPlayer() && board.TileAt(0, 2).Symbol != Player.getNoPlayer()) {
-            //if first row is full with same symbol
-            if (board.TileAt(0, 0).Symbol == board.TileAt(0, 1).Symbol && board.TileAt(0, 2).Symbol == board.TileAt(0, 1).Symbol) {
-                return board.TileAt(0, 0).Symbol;
+        if (board.TileAt(0, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(0, 1).Symbol != Player.NO_PLAYER.getSymbol()) {
+            if (board.TileAt(0, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+                //if first row is full with same symbol
+                if (board.TileAt(0, 0).Symbol == board.TileAt(0, 1).Symbol && board.TileAt(0, 2).Symbol == board.TileAt(0, 1).Symbol) {
+                    return board.TileAt(0, 0).Symbol;
+                }
             }
         }
 
         //if the positions in first row are taken
-        if (board.TileAt(1, 0).Symbol != Player.getNoPlayer() && board.TileAt(1, 1).Symbol != Player.getNoPlayer() && board.TileAt(1, 2).Symbol != Player.getNoPlayer()) {
-            //if middle row is full with same symbol
-            if (board.TileAt(1, 0).Symbol == board.TileAt(1, 1).Symbol && board.TileAt(1, 2).Symbol == board.TileAt(1, 1).Symbol) {
-                return board.TileAt(1, 0).Symbol;
+        if (board.TileAt(1, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(1, 1).Symbol != Player.NO_PLAYER.getSymbol()) {
+            if (board.TileAt(1, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+                //if middle row is full with same symbol
+                if (board.TileAt(1, 0).Symbol == board.TileAt(1, 1).Symbol && board.TileAt(1, 2).Symbol == board.TileAt(1, 1).Symbol) {
+                    return board.TileAt(1, 0).Symbol;
+                }
             }
         }
 
         //if the positions in first row are taken
-        if (board.TileAt(2, 0).Symbol != Player.getNoPlayer() && board.TileAt(2, 1).Symbol != Player.getNoPlayer() && board.TileAt(2, 2).Symbol != Player.getNoPlayer()) {
-            //if middle row is full with same symbol
-            if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
-                return board.TileAt(2, 0).Symbol;
+        if (board.TileAt(2, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 1).Symbol != Player.NO_PLAYER.getSymbol()) {
+            if (board.TileAt(2, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+                //if middle row is full with same symbol
+                if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
+                    return board.TileAt(2, 0).Symbol;
+                }
             }
         }
 
-        return Player.getNoPlayer();
+        return Player.NO_PLAYER.getSymbol();
     }
 
     public Player getWinner() {
