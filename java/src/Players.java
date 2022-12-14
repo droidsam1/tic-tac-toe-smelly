@@ -1,5 +1,9 @@
 public enum Players {
     ;
 
-    public static final char NO_PLAYER = ' ';
+    private static final char NO_PLAYER = ' ';
+
+    public static char getNoPlayer() {
+        return NO_PLAYER;
+    }
 }
