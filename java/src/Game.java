@@ -3,8 +3,13 @@ import exceptions.InvalidNextPlayerException;
 import exceptions.InvalidPosition;
 
 public class Game {
-    private final Board board = new Board();
-    private char lastPlayedSymbol = Player.getNoPlayer();
+    private final Board board;
+    private char lastPlayedSymbol;
+
+    public Game() {
+        board = new Board();
+        lastPlayedSymbol = Player.getNoPlayer();
+    }
 
     public void Play(Player player, int x, int y) throws Exception {
         this.Play(player.getSymbol(), x, y);
