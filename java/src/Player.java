@@ -14,4 +14,9 @@ public enum Player {
     public char getSymbol() {
         return symbol;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(symbol);
+    }
 }
