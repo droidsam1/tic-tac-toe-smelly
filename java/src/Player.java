@@ -1,8 +1,8 @@
-public enum Players {
+public enum Player {
     NO_PLAYER(' ');
     private final char symbol;
 
-    Players(char symbol) {
+    Player(char symbol) {
         this.symbol = symbol;
     }
 
