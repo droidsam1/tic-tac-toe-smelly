@@ -46,7 +46,7 @@ public class Game {
         return lastPlayedSymbol == Player.getNoPlayer();
     }
 
-    public char Winner() {
+    private char Winner() {
         //if the positions in first row are taken
         if (board.TileAt(0, 0).Symbol != Player.getNoPlayer() && board.TileAt(0, 1).Symbol != Player.getNoPlayer() && board.TileAt(0, 2).Symbol != Player.getNoPlayer()) {
             //if first row is full with same symbol
