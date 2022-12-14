@@ -20,7 +20,10 @@ public class Game {
             validatePlayerXPlaysFirst(symbol);
         }
         validatePlayersMoveIsNotRepeated(symbol);
-        //if not first move but play on an already played tile
+        validatePlayerNotOverrideAlreadyPlayedTitle(x, y);
+    }
+
+    private void validatePlayerNotOverrideAlreadyPlayedTitle(int x, int y) throws InvalidPosition {
         if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new InvalidPosition();
         }
