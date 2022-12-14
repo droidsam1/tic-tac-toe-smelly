@@ -4,6 +4,14 @@ public class Game {
     private char lastPlayedSymbol = NO_PLAYER_SYMBOL;
 
     public void Play(char symbol, int x, int y) throws Exception {
+        validateMove(symbol, x, y);
+
+        // update game state
+        lastPlayedSymbol = symbol;
+        board.AddTileAt(symbol, x, y);
+    }
+
+    private void validateMove(char symbol, int x, int y) throws Exception {
         //if first move
         if (lastPlayedSymbol == NO_PLAYER_SYMBOL) {
             //if player is X
@@ -19,10 +27,6 @@ public class Game {
         else if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new Exception("Invalid position");
         }
-
-        // update game state
-        lastPlayedSymbol = symbol;
-        board.AddTileAt(symbol, x, y);
     }
 
     public char Winner() {
