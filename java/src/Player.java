@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public enum Player {
     NO_PLAYER(' ');
 
@@ -9,6 +11,10 @@ public enum Player {
 
     public static char getNoPlayer() {
         return NO_PLAYER.symbol;
+    }
+
+    public static Player from(char symbol) {
+        return Arrays.stream(Player.values()).filter(player -> player.symbol == symbol).findFirst().orElse(NO_PLAYER);
     }
 
     public char getSymbol() {

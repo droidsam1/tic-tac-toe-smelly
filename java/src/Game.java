@@ -73,5 +73,9 @@ public class Game {
 
         return Player.getNoPlayer();
     }
+
+    public Player getWinner() {
+        return Player.from(this.Winner());
+    }
 }
 
