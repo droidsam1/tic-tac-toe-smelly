@@ -1,5 +1,6 @@
 public enum Player {
     NO_PLAYER(' ');
+
     private final char symbol;
 
     Player(char symbol) {
@@ -8,5 +9,9 @@ public enum Player {
 
     public static char getNoPlayer() {
         return NO_PLAYER.symbol;
+    }
+
+    public char getSymbol() {
+        return symbol;
     }
 }
