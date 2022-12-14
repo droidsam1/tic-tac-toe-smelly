@@ -1,5 +1,6 @@
 import exceptions.InvalidFirstPlayerException;
 import exceptions.InvalidNextPlayerException;
+import exceptions.InvalidPosition;
 
 public class Game {
     public static final char NO_PLAYER_SYMBOL = ' ';
@@ -28,7 +29,7 @@ public class Game {
         }
         //if not first move but play on an already played tile
         else if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
-            throw new Exception("Invalid position");
+            throw new InvalidPosition();
         }
     }
 
