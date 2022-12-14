@@ -6,6 +6,10 @@ public class Game {
     private final Board board = new Board();
     private char lastPlayedSymbol = Player.getNoPlayer();
 
+    public void Play(Player player, int x, int y) throws Exception {
+        this.Play(player.getSymbol(), x, y);
+    }
+
     public void Play(char symbol, int x, int y) throws Exception {
         validateMove(symbol, x, y);
 
