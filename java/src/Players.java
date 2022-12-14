@@ -1,12 +1,12 @@
 public enum Players {
-    NO_PLAYER_SYMBOL(' ');
-    private final char playerSymbol;
+    NO_PLAYER(' ');
+    private final char symbol;
 
-    Players(char playerSymbol) {
-        this.playerSymbol = playerSymbol;
+    Players(char symbol) {
+        this.symbol = symbol;
     }
 
     public static char getNoPlayer() {
-        return NO_PLAYER_SYMBOL.playerSymbol;
+        return NO_PLAYER.symbol;
     }
 }
