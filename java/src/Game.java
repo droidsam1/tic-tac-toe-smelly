@@ -19,13 +19,16 @@ public class Game {
         if (isFirstMove()) {
             validatePlayerXPlaysFirst(symbol);
         }
-        //if not first move but player repeated
-        if (symbol == lastPlayedSymbol) {
-            throw new InvalidNextPlayerException();
-        }
+        validatePlayersMoveIsNotRepeated(symbol);
         //if not first move but play on an already played tile
         if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new InvalidPosition();
+        }
+    }
+
+    private void validatePlayersMoveIsNotRepeated(char symbol) throws InvalidNextPlayerException {
+        if (symbol == lastPlayedSymbol) {
+            throw new InvalidNextPlayerException();
         }
     }
 
