@@ -20,11 +20,11 @@ public class Game {
             validatePlayerXPlaysFirst(symbol);
         }
         //if not first move but player repeated
-        else if (symbol == lastPlayedSymbol) {
+        if (symbol == lastPlayedSymbol) {
             throw new InvalidNextPlayerException();
         }
         //if not first move but play on an already played tile
-        else if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
+        if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new InvalidPosition();
         }
     }
