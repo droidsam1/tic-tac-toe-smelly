@@ -1,17 +1,17 @@
 public class Game {
-    private char _lastSymbol = ' ';
     private final Board _board = new Board();
+    private char lastPlayedSymbol = ' ';
 
     public void Play(char symbol, int x, int y) throws Exception {
         //if first move
-        if (_lastSymbol == ' ') {
+        if (lastPlayedSymbol == ' ') {
             //if player is X
             if (symbol == 'O') {
                 throw new Exception("Invalid first player");
             }
         }
         //if not first move but player repeated
-        else if (symbol == _lastSymbol) {
+        else if (symbol == lastPlayedSymbol) {
             throw new Exception("Invalid next player");
         }
         //if not first move but play on an already played tile
@@ -20,7 +20,7 @@ public class Game {
         }
 
         // update game state
-        _lastSymbol = symbol;
+        lastPlayedSymbol = symbol;
         _board.AddTileAt(symbol, x, y);
     }
 
