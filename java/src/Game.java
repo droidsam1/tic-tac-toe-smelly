@@ -1,3 +1,5 @@
+import exceptions.InvalidFirstPlayerException;
+
 public class Game {
     public static final char NO_PLAYER_SYMBOL = ' ';
     private final Board board = new Board();
@@ -16,7 +18,7 @@ public class Game {
         if (lastPlayedSymbol == NO_PLAYER_SYMBOL) {
             //if player is X
             if (symbol == 'O') {
-                throw new Exception("Invalid first player");
+                throw new InvalidFirstPlayerException();
             }
         }
         //if not first move but player repeated
