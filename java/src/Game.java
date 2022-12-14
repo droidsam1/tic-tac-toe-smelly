@@ -17,10 +17,7 @@ public class Game {
 
     private void validateMove(char symbol, int x, int y) throws Exception {
         if (isFirstMove()) {
-            //if player is X
-            if (symbol == 'O') {
-                throw new InvalidFirstPlayerException();
-            }
+            validatePlayerXPlaysFirst(symbol);
         }
         //if not first move but player repeated
         else if (symbol == lastPlayedSymbol) {
@@ -29,6 +26,12 @@ public class Game {
         //if not first move but play on an already played tile
         else if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new InvalidPosition();
+        }
+    }
+
+    private void validatePlayerXPlaysFirst(char symbol) throws InvalidFirstPlayerException {
+        if (symbol != 'X') {
+            throw new InvalidFirstPlayerException();
         }
     }
 
