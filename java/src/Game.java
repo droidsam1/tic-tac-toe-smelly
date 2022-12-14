@@ -16,8 +16,7 @@ public class Game {
     }
 
     private void validateMove(char symbol, int x, int y) throws Exception {
-        //if first move
-        if (lastPlayedSymbol == NO_PLAYER_SYMBOL) {
+        if (isFirstMove()) {
             //if player is X
             if (symbol == 'O') {
                 throw new InvalidFirstPlayerException();
@@ -31,6 +30,10 @@ public class Game {
         else if (board.TileAt(x, y).Symbol != NO_PLAYER_SYMBOL) {
             throw new InvalidPosition();
         }
+    }
+
+    private boolean isFirstMove() {
+        return lastPlayedSymbol == NO_PLAYER_SYMBOL;
     }
 
     public char Winner() {
