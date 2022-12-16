@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
-    private final List<Tile> _plays = new ArrayList<>();
+    private final List<Tile> tiles = new ArrayList<>();
 
     public Board() {
         for (int i = 0; i < 3; i++) {
@@ -11,13 +11,13 @@ public class Board {
                 tile.X = i;
                 tile.Y = j;
                 tile.Symbol = ' ';
-                _plays.add(tile);
+                tiles.add(tile);
             }
         }
     }
 
     public Tile TileAt(int x, int y) {
-        for (Tile t : _plays) {
+        for (Tile t : tiles) {
             if (t.X == x && t.Y == y) {
                 return t;
             }
