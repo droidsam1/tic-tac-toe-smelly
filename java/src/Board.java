@@ -34,7 +34,7 @@ public class Board {
     }
 
     public boolean isRowFullWithSamePlayer(int rowNumber) {
-        return this.getPlayerAt(rowNumber, 0) == this.getPlayerAt(rowNumber, 1) && this.getPlayerAt(rowNumber, 2) == this.getPlayerAt(rowNumber, 1);
+        return this.getPlayerAt(rowNumber, 0) != Player.NO_PLAYER.getSymbol() && this.getPlayerAt(rowNumber, 0) == this.getPlayerAt(rowNumber, 1) && this.getPlayerAt(rowNumber, 2) == this.getPlayerAt(rowNumber, 1);
     }
 
     public boolean isRowFull(int rowNumber) {
