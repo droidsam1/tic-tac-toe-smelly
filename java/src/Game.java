@@ -52,21 +52,18 @@ public class Game {
     private char Winner() {
 
         if (isRowTaken(0)) {
-            //if first row is full with same symbol
             if (isFullWithWithSameSymbol(0)) {
                 return board.TileAt(0, 0).Symbol;
             }
         }
 
         if (isRowTaken(1)) {
-            //if middle row is full with same symbol
             if (isFullWithWithSameSymbol(1)) {
                 return board.TileAt(1, 0).Symbol;
             }
         }
 
         if (isRowTaken(2)) {
-            //if middle row is full with same symbol
             if (isFullWithWithSameSymbol(2)) {
                 return board.TileAt(2, 0).Symbol;
             }
