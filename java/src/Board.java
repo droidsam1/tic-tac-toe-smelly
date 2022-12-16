@@ -13,7 +13,6 @@ public class Board {
         for (int x = 0; x < SQUARE_BOARD_SIZE; x++) {
             for (int y = 0; y < SQUARE_BOARD_SIZE; y++) {
                 Tile tile = new Tile(x, y);
-                tile.Symbol = Player.NO_PLAYER.getSymbol();
                 tiles.add(tile);
             }
         }

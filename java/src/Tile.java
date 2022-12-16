@@ -6,5 +6,6 @@ public class Tile {
     public Tile(int x, int y) {
         X = x;
         Y = y;
+        Symbol = Player.NO_PLAYER.getSymbol();
     }
 }
