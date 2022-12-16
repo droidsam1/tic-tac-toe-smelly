@@ -51,15 +51,15 @@ public class Game {
 
     private char Winner() {
 
-        if (isRowTaken(0) && isFullWithWithSameSymbol(0)) {
+        if (isRowFull(0) && isFullWithWithSameSymbol(0)) {
             return board.TileAt(0, 0).Symbol;
         }
 
-        if (isRowTaken(1) && isFullWithWithSameSymbol(1)) {
+        if (isRowFull(1) && isFullWithWithSameSymbol(1)) {
             return board.TileAt(1, 0).Symbol;
         }
 
-        if (isRowTaken(2) && isFullWithWithSameSymbol(2)) {
+        if (isRowFull(2) && isFullWithWithSameSymbol(2)) {
             return board.TileAt(2, 0).Symbol;
         }
 
@@ -70,7 +70,7 @@ public class Game {
         return board.TileAt(rowNumber, 0).Symbol == board.TileAt(rowNumber, 1).Symbol && board.TileAt(rowNumber, 2).Symbol == board.TileAt(rowNumber, 1).Symbol;
     }
 
-    private boolean isRowTaken(int rowNumber) {
+    private boolean isRowFull(int rowNumber) {
         return board.TileAt(rowNumber, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 2).Symbol != Player.NO_PLAYER.getSymbol();
     }
 
