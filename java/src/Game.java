@@ -51,15 +51,13 @@ public class Game {
 
     public Player getWinner() {
         for (int row = 0; row < board.getNumberOfRows(); row++) {
-            if (isRowFull(row) && isRowFullWithWithSameSymbol(row)) {
-                return Player.from(board.getPlayerAt(row, 0));
+            if (isRowFull(row)) {
+                if (board.isRowFullWithWithSameSymbol(row)) {
+                    return Player.from(board.getPlayerAt(row, 0));
+                }
             }
         }
         return Player.NO_PLAYER;
-    }
-
-    private boolean isRowFullWithWithSameSymbol(int rowNumber) {
-        return board.isRowFullWithWithSameSymbol(rowNumber);
     }
 
     private boolean isRowFull(int rowNumber) {
