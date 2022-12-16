@@ -9,10 +9,6 @@ public enum Player {
         this.symbol = symbol;
     }
 
-    public static char getNoPlayer() {
-        return NO_PLAYER.getSymbol();
-    }
-
     public static Player from(char symbol) {
         return Arrays.stream(Player.values()).filter(player -> player.symbol == symbol).findFirst().orElse(NO_PLAYER);
     }
