@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
+    private static final int SQUARE_BOARD_SIZE = 3;
     private final List<Tile> tiles = new ArrayList<>();
 
     public Board() {
@@ -9,8 +10,8 @@ public class Board {
     }
 
     private void buildSquareBoard() {
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (int i = 0; i < SQUARE_BOARD_SIZE; i++) {
+            for (int j = 0; j < SQUARE_BOARD_SIZE; j++) {
                 Tile tile = new Tile();
                 tile.X = i;
                 tile.Y = j;
