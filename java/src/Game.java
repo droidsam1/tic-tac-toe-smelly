@@ -53,7 +53,7 @@ public class Game {
 
         if (isRowTaken(0)) {
             //if first row is full with same symbol
-            if (isFullWithWithSameSymbol()) {
+            if (isFullWithWithSameSymbol(0)) {
                 return board.TileAt(0, 0).Symbol;
             }
         }
@@ -75,8 +75,8 @@ public class Game {
         return Player.NO_PLAYER.getSymbol();
     }
 
-    private boolean isFullWithWithSameSymbol() {
-        return board.TileAt(0, 0).Symbol == board.TileAt(0, 1).Symbol && board.TileAt(0, 2).Symbol == board.TileAt(0, 1).Symbol;
+    private boolean isFullWithWithSameSymbol(int rowNumber) {
+        return board.TileAt(rowNumber, 0).Symbol == board.TileAt(rowNumber, 1).Symbol && board.TileAt(rowNumber, 2).Symbol == board.TileAt(rowNumber, 1).Symbol;
     }
 
     private boolean isRowTaken(int rowNumber) {
