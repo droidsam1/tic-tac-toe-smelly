@@ -19,7 +19,7 @@ public class Game {
     }
 
     private void validateMove(Player player, int x, int y) throws Exception {
-        validatePlayerXPlaysFirst(player.getSymbol());
+        validatePlayerXPlaysFirst(player);
         validatePlayersMoveIsNotRepeated(player.getSymbol());
         validatePlayerNotOverrideAlreadyPlayedTitle(x, y);
     }
@@ -36,8 +36,8 @@ public class Game {
         }
     }
 
-    private void validatePlayerXPlaysFirst(char symbol) throws InvalidFirstPlayerException {
-        if (isFirstMove() && symbol != 'X') {
+    private void validatePlayerXPlaysFirst(Player player) throws InvalidFirstPlayerException {
+        if (isFirstMove() && !Player.PLAYER_X.equals(player)) {
             throw new InvalidFirstPlayerException();
         }
     }
