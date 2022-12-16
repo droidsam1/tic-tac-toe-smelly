@@ -52,14 +52,14 @@ public class Game {
     public Player getWinner() {
         for (int row = 0; row < board.getNumberOfRows(); row++) {
             if (isRowFull(row) && isRowFullWithWithSameSymbol(row)) {
-                return Player.from(board.getTileAt(row, 0).getSymbol());
+                return Player.from(board.getPlayerAt(row, 0));
             }
         }
         return Player.NO_PLAYER;
     }
 
     private boolean isRowFullWithWithSameSymbol(int rowNumber) {
-        return board.getTileAt(rowNumber, 0).getSymbol() == board.getTileAt(rowNumber, 1).getSymbol() && board.getTileAt(rowNumber, 2).getSymbol() == board.getTileAt(rowNumber, 1).getSymbol();
+        return board.getPlayerAt(rowNumber, 0) == board.getPlayerAt(rowNumber, 1) && board.getPlayerAt(rowNumber, 2) == board.getPlayerAt(rowNumber, 1);
     }
 
     private boolean isRowFull(int rowNumber) {
