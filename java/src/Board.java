@@ -22,12 +22,7 @@ public class Board {
     }
 
     private Tile getTileAt(int x, int y) {
-        for (Tile t : tiles) {
-            if (t.X == x && t.Y == y) {
-                return t;
-            }
-        }
-        return null;
+        return tiles.stream().filter(tile -> tile.X == x && tile.Y == y).findFirst().orElseThrow();
     }
 
     public char getPlayerAt(int x, int y) {
