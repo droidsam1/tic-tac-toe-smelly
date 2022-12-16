@@ -12,8 +12,7 @@ public class Board {
     private void buildSquareBoard() {
         for (int x = 0; x < SQUARE_BOARD_SIZE; x++) {
             for (int y = 0; y < SQUARE_BOARD_SIZE; y++) {
-                Tile tile = new Tile(x, y);
-                tiles.add(tile);
+                tiles.add(new Tile(x, y));
             }
         }
     }
