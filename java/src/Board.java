@@ -21,7 +21,7 @@ public class Board {
         return SQUARE_BOARD_SIZE;
     }
 
-    public Tile getTileAt(int x, int y) {
+    private Tile getTileAt(int x, int y) {
         for (Tile t : tiles) {
             if (t.X == x && t.Y == y) {
                 return t;
