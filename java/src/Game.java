@@ -5,10 +5,12 @@ import exceptions.InvalidPosition;
 public class Game {
     private final Board board;
     private char lastPlayedSymbol;
+    private final Player lastPlayer;
 
     public Game() {
         board = new Board();
         lastPlayedSymbol = Player.NO_PLAYER.getSymbol();
+        lastPlayer = Player.NO_PLAYER;
     }
 
     public void Play(Player player, int x, int y) throws Exception {
