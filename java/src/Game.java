@@ -5,7 +5,7 @@ import exceptions.InvalidPosition;
 public class Game {
     private final Board board;
     private char lastPlayedSymbol;
-    private final Player lastPlayer;
+    private Player lastPlayer;
 
     public Game() {
         board = new Board();
@@ -15,6 +15,7 @@ public class Game {
 
     public void Play(Player player, int x, int y) throws Exception {
         this.Play(player.getSymbol(), x, y);
+        lastPlayer = player;
     }
 
     public void Play(char symbol, int x, int y) throws Exception {
