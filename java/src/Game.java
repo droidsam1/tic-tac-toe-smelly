@@ -28,7 +28,7 @@ public class Game {
     }
 
     private void validatePlayerNotOverrideAlreadyPlayedTitle(int x, int y) throws InvalidPosition {
-        if (board.TileAt(x, y).getSymbol() != Player.NO_PLAYER.getSymbol()) {
+        if (board.getTileAt(x, y).getSymbol() != Player.NO_PLAYER.getSymbol()) {
             throw new InvalidPosition();
         }
     }
@@ -52,18 +52,18 @@ public class Game {
     public Player getWinner() {
         for (int row = 0; row < board.getNumberOfRows(); row++) {
             if (isRowFull(row) && isRowFullWithWithSameSymbol(row)) {
-                return Player.from(board.TileAt(row, 0).getSymbol());
+                return Player.from(board.getTileAt(row, 0).getSymbol());
             }
         }
         return Player.NO_PLAYER;
     }
 
     private boolean isRowFullWithWithSameSymbol(int rowNumber) {
-        return board.TileAt(rowNumber, 0).getSymbol() == board.TileAt(rowNumber, 1).getSymbol() && board.TileAt(rowNumber, 2).getSymbol() == board.TileAt(rowNumber, 1).getSymbol();
+        return board.getTileAt(rowNumber, 0).getSymbol() == board.getTileAt(rowNumber, 1).getSymbol() && board.getTileAt(rowNumber, 2).getSymbol() == board.getTileAt(rowNumber, 1).getSymbol();
     }
 
     private boolean isRowFull(int rowNumber) {
-        return board.TileAt(rowNumber, 0).getSymbol() != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 1).getSymbol() != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 2).getSymbol() != Player.NO_PLAYER.getSymbol();
+        return board.getTileAt(rowNumber, 0).getSymbol() != Player.NO_PLAYER.getSymbol() && board.getTileAt(rowNumber, 1).getSymbol() != Player.NO_PLAYER.getSymbol() && board.getTileAt(rowNumber, 2).getSymbol() != Player.NO_PLAYER.getSymbol();
     }
 }
 

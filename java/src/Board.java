@@ -21,7 +21,7 @@ public class Board {
         return SQUARE_BOARD_SIZE;
     }
 
-    public Tile TileAt(int x, int y) {
+    public Tile getTileAt(int x, int y) {
         for (Tile t : tiles) {
             if (t.X == x && t.Y == y) {
                 return t;
@@ -31,6 +31,6 @@ public class Board {
     }
 
     public void setPlayerAt(Player player, int x, int y) {
-        TileAt(x, y).setSymbol(player.getSymbol());
+        getTileAt(x, y).setSymbol(player.getSymbol());
     }
 }
