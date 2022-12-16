@@ -52,14 +52,14 @@ public class Game {
     public Player getWinner() {
         int numberOfRows = 3;
         for (int row = 0; row < numberOfRows; row++) {
-            if (isRowFull(row) && isFullWithWithSameSymbol(row)) {
+            if (isRowFull(row) && isRowFullWithWithSameSymbol(row)) {
                 return Player.from(board.TileAt(row, 0).Symbol);
             }
         }
         return Player.NO_PLAYER;
     }
 
-    private boolean isFullWithWithSameSymbol(int rowNumber) {
+    private boolean isRowFullWithWithSameSymbol(int rowNumber) {
         return board.TileAt(rowNumber, 0).Symbol == board.TileAt(rowNumber, 1).Symbol && board.TileAt(rowNumber, 2).Symbol == board.TileAt(rowNumber, 1).Symbol;
     }
 
