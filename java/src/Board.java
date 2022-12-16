@@ -30,10 +30,6 @@ public class Board {
         return null;
     }
 
-    public void AddTileAt(char symbol, int x, int y) {
-        TileAt(x, y).Symbol = symbol;
-    }
-
     public void setPlayerAt(Player player, int x, int y) {
         TileAt(x, y).Symbol = player.getSymbol();
     }

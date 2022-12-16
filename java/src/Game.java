@@ -17,7 +17,7 @@ public class Game {
     }
 
     private void updateGameState(Player player, int x, int y) {
-        board.AddTileAt(player.getSymbol(), x, y);
+        board.setPlayerAt(player, x, y);
         lastPlayer = player;
     }
 
