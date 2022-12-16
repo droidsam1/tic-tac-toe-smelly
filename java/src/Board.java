@@ -30,6 +30,10 @@ public class Board {
         return null;
     }
 
+    public char getPlayerAt(int x, int y) {
+        return getTileAt(x, y).getSymbol();
+    }
+
     public void setPlayerAt(Player player, int x, int y) {
         getTileAt(x, y).setSymbol(player.getSymbol());
     }
