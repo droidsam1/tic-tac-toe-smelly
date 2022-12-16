@@ -28,7 +28,7 @@ public class Game {
     }
 
     private void validatePlayerNotOverrideAlreadyPlayedTitle(int x, int y) throws InvalidPosition {
-        if (board.getTileAt(x, y).getSymbol() != Player.NO_PLAYER.getSymbol()) {
+        if (board.getPlayerAt(x, y) != Player.NO_PLAYER.getSymbol()) {
             throw new InvalidPosition();
         }
     }
