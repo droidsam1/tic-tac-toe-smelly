@@ -13,7 +13,10 @@ public class Game {
 
     public void Play(Player player, int x, int y) throws Exception {
         validateMove(player, x, y);
-        // update game state
+        updateGameState(player, x, y);
+    }
+
+    private void updateGameState(Player player, int x, int y) {
         board.AddTileAt(player.getSymbol(), x, y);
         lastPlayer = player;
     }
