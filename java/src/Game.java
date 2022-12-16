@@ -51,7 +51,7 @@ public class Game {
 
     private char Winner() {
         //if the positions in first row are taken
-        if (board.TileAt(0, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(0, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(0, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+        if (isRowTaken(0)) {
             //if first row is full with same symbol
             if (board.TileAt(0, 0).Symbol == board.TileAt(0, 1).Symbol && board.TileAt(0, 2).Symbol == board.TileAt(0, 1).Symbol) {
                 return board.TileAt(0, 0).Symbol;
@@ -59,7 +59,7 @@ public class Game {
         }
 
         //if the positions in first row are taken
-        if (board.TileAt(1, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(1, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(1, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+        if (isRowTaken(1)) {
             //if middle row is full with same symbol
             if (board.TileAt(1, 0).Symbol == board.TileAt(1, 1).Symbol && board.TileAt(1, 2).Symbol == board.TileAt(1, 1).Symbol) {
                 return board.TileAt(1, 0).Symbol;
@@ -67,7 +67,7 @@ public class Game {
         }
 
         //if the positions in first row are taken
-        if (board.TileAt(2, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+        if (isRowTaken(2)) {
             //if middle row is full with same symbol
             if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
                 return board.TileAt(2, 0).Symbol;
@@ -75,6 +75,10 @@ public class Game {
         }
 
         return Player.NO_PLAYER.getSymbol();
+    }
+
+    private boolean isRowTaken(int x) {
+        return board.TileAt(x, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(x, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(x, 2).Symbol != Player.NO_PLAYER.getSymbol();
     }
 
     public Player getWinner() {
