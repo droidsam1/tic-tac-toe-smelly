@@ -12,15 +12,10 @@ public class Game {
     }
 
     public void Play(Player player, int x, int y) throws Exception {
-        this.Play(player.getSymbol(), x, y);
-        lastPlayer = player;
-    }
-
-    public void Play(char symbol, int x, int y) throws Exception {
-        validateMove(symbol, x, y);
-
+        validateMove(player.getSymbol(), x, y);
         // update game state
-        board.AddTileAt(symbol, x, y);
+        board.AddTileAt(player.getSymbol(), x, y);
+        lastPlayer = player;
     }
 
     private void validateMove(char symbol, int x, int y) throws Exception {
