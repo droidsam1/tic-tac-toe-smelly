@@ -59,7 +59,7 @@ public class Game {
     }
 
     private boolean isRowFullWithWithSameSymbol(int rowNumber) {
-        return board.getPlayerAt(rowNumber, 0) == board.getPlayerAt(rowNumber, 1) && board.getPlayerAt(rowNumber, 2) == board.getPlayerAt(rowNumber, 1);
+        return board.isRowFullWithWithSameSymbol(rowNumber);
     }
 
     private boolean isRowFull(int rowNumber) {
