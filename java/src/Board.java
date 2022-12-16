@@ -33,7 +33,7 @@ public class Board {
         getTileAt(x, y).setSymbol(player.getSymbol());
     }
 
-    public boolean isRowFullWithWithSameSymbol(int rowNumber) {
+    public boolean isRowFullWithSamePlayer(int rowNumber) {
         return this.getPlayerAt(rowNumber, 0) == this.getPlayerAt(rowNumber, 1) && this.getPlayerAt(rowNumber, 2) == this.getPlayerAt(rowNumber, 1);
     }
 
