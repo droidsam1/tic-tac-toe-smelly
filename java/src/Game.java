@@ -4,12 +4,10 @@ import exceptions.InvalidPosition;
 
 public class Game {
     private final Board board;
-    private char lastPlayedSymbol;
     private Player lastPlayer;
 
     public Game() {
         board = new Board();
-        lastPlayedSymbol = Player.NO_PLAYER.getSymbol();
         lastPlayer = Player.NO_PLAYER;
     }
 
@@ -22,7 +20,6 @@ public class Game {
         validateMove(symbol, x, y);
 
         // update game state
-        lastPlayedSymbol = symbol;
         board.AddTileAt(symbol, x, y);
     }
 
@@ -39,7 +36,7 @@ public class Game {
     }
 
     private void validatePlayersMoveIsNotRepeated(char symbol) throws InvalidNextPlayerException {
-        if (symbol == lastPlayedSymbol) {
+        if (symbol == lastPlayer.getSymbol()) {
             throw new InvalidNextPlayerException();
         }
     }
@@ -51,7 +48,7 @@ public class Game {
     }
 
     private boolean isFirstMove() {
-        return lastPlayedSymbol == Player.NO_PLAYER.getSymbol();
+        return lastPlayer.getSymbol() == Player.NO_PLAYER.getSymbol();
     }
 
     private char Winner() {
