@@ -15,7 +15,7 @@ public class Board {
                 Tile tile = new Tile();
                 tile.X = i;
                 tile.Y = j;
-                tile.Symbol = ' ';
+                tile.Symbol = Player.NO_PLAYER.getSymbol();
                 tiles.add(tile);
             }
         }
