@@ -12,15 +12,15 @@ public class Game {
     }
 
     public void Play(Player player, int x, int y) throws Exception {
-        validateMove(player.getSymbol(), x, y);
+        validateMove(player, x, y);
         // update game state
         board.AddTileAt(player.getSymbol(), x, y);
         lastPlayer = player;
     }
 
-    private void validateMove(char symbol, int x, int y) throws Exception {
-        validatePlayerXPlaysFirst(symbol);
-        validatePlayersMoveIsNotRepeated(symbol);
+    private void validateMove(Player player, int x, int y) throws Exception {
+        validatePlayerXPlaysFirst(player.getSymbol());
+        validatePlayersMoveIsNotRepeated(player.getSymbol());
         validatePlayerNotOverrideAlreadyPlayedTitle(x, y);
     }
 
