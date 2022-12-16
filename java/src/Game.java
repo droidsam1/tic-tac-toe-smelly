@@ -48,7 +48,7 @@ public class Game {
     }
 
     private boolean isFirstMove() {
-        return lastPlayer.getSymbol() == Player.NO_PLAYER.getSymbol();
+        return Player.NO_PLAYER.equals(lastPlayer);
     }
 
     private char Winner() {
