@@ -50,19 +50,12 @@ public class Game {
     }
 
     private char Winner() {
-
-        if (isRowFull(0) && isFullWithWithSameSymbol(0)) {
-            return board.TileAt(0, 0).Symbol;
+        int numberOfRows = 3;
+        for (int row = 0; row < numberOfRows; row++) {
+            if (isRowFull(row) && isFullWithWithSameSymbol(row)) {
+                return board.TileAt(row, 0).Symbol;
+            }
         }
-
-        if (isRowFull(1) && isFullWithWithSameSymbol(1)) {
-            return board.TileAt(1, 0).Symbol;
-        }
-
-        if (isRowFull(2) && isFullWithWithSameSymbol(2)) {
-            return board.TileAt(2, 0).Symbol;
-        }
-
         return Player.NO_PLAYER.getSymbol();
     }
 
