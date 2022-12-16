@@ -77,8 +77,8 @@ public class Game {
         return Player.NO_PLAYER.getSymbol();
     }
 
-    private boolean isRowTaken(int x) {
-        return board.TileAt(x, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(x, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(x, 2).Symbol != Player.NO_PLAYER.getSymbol();
+    private boolean isRowTaken(int rowNumber) {
+        return board.TileAt(rowNumber, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(rowNumber, 2).Symbol != Player.NO_PLAYER.getSymbol();
     }
 
     public Player getWinner() {
