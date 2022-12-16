@@ -60,14 +60,14 @@ public class Game {
 
         if (isRowTaken(1)) {
             //if middle row is full with same symbol
-            if (board.TileAt(1, 0).Symbol == board.TileAt(1, 1).Symbol && board.TileAt(1, 2).Symbol == board.TileAt(1, 1).Symbol) {
+            if (isFullWithWithSameSymbol(1)) {
                 return board.TileAt(1, 0).Symbol;
             }
         }
 
         if (isRowTaken(2)) {
             //if middle row is full with same symbol
-            if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
+            if (isFullWithWithSameSymbol(2)) {
                 return board.TileAt(2, 0).Symbol;
             }
         }
