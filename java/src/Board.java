@@ -17,6 +17,10 @@ public class Board {
         }
     }
 
+    public int getNumberOfRows() {
+        return SQUARE_BOARD_SIZE;
+    }
+
     public Tile TileAt(int x, int y) {
         for (Tile t : tiles) {
             if (t.X == x && t.Y == y) {

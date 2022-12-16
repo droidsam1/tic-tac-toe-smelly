@@ -50,8 +50,7 @@ public class Game {
     }
 
     public Player getWinner() {
-        int numberOfRows = 3;
-        for (int row = 0; row < numberOfRows; row++) {
+        for (int row = 0; row < board.getNumberOfRows(); row++) {
             if (isRowFull(row) && isRowFullWithWithSameSymbol(row)) {
                 return Player.from(board.TileAt(row, 0).Symbol);
             }
