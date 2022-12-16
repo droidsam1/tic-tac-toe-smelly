@@ -67,12 +67,10 @@ public class Game {
         }
 
         //if the positions in first row are taken
-        if (board.TileAt(2, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 1).Symbol != Player.NO_PLAYER.getSymbol()) {
-            if (board.TileAt(2, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
-                //if middle row is full with same symbol
-                if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
-                    return board.TileAt(2, 0).Symbol;
-                }
+        if (board.TileAt(2, 0).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 1).Symbol != Player.NO_PLAYER.getSymbol() && board.TileAt(2, 2).Symbol != Player.NO_PLAYER.getSymbol()) {
+            //if middle row is full with same symbol
+            if (board.TileAt(2, 0).Symbol == board.TileAt(2, 1).Symbol && board.TileAt(2, 2).Symbol == board.TileAt(2, 1).Symbol) {
+                return board.TileAt(2, 0).Symbol;
             }
         }
 
