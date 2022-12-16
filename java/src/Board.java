@@ -36,4 +36,8 @@ public class Board {
     public boolean isRowFullWithWithSameSymbol(int rowNumber) {
         return this.getPlayerAt(rowNumber, 0) == this.getPlayerAt(rowNumber, 1) && this.getPlayerAt(rowNumber, 2) == this.getPlayerAt(rowNumber, 1);
     }
+
+    private boolean isRowFull(int rowNumber) {
+        return this.getPlayerAt(rowNumber, 0) != Player.NO_PLAYER.getSymbol() && this.getPlayerAt(rowNumber, 1) != Player.NO_PLAYER.getSymbol() && this.getPlayerAt(rowNumber, 2) != Player.NO_PLAYER.getSymbol();
+    }
 }
