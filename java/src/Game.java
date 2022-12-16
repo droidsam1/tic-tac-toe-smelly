@@ -61,7 +61,7 @@ public class Game {
     }
 
     private boolean isRowFull(int rowNumber) {
-        return board.getPlayerAt(rowNumber, 0) != Player.NO_PLAYER.getSymbol() && board.getPlayerAt(rowNumber, 1) != Player.NO_PLAYER.getSymbol() && board.getPlayerAt(rowNumber, 2) != Player.NO_PLAYER.getSymbol();
+        return board.isRowFull(rowNumber);
     }
 }
 
