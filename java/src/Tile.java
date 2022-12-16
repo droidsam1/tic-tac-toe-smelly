@@ -1,11 +1,19 @@
 public class Tile {
     public int X;
     public int Y;
-    public char Symbol;
+    private char Symbol;
 
     public Tile(int x, int y) {
         X = x;
         Y = y;
-        Symbol = Player.NO_PLAYER.getSymbol();
+        setSymbol(Player.NO_PLAYER.getSymbol());
+    }
+
+    public char getSymbol() {
+        return Symbol;
+    }
+
+    public void setSymbol(char symbol) {
+        Symbol = symbol;
     }
 }

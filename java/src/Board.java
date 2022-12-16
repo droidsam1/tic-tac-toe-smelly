@@ -31,6 +31,6 @@ public class Board {
     }
 
     public void setPlayerAt(Player player, int x, int y) {
-        TileAt(x, y).Symbol = player.getSymbol();
+        TileAt(x, y).setSymbol(player.getSymbol());
     }
 }
