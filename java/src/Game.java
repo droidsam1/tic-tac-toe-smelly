@@ -20,7 +20,7 @@ public class Game {
 
     private void validateMove(Player player, int x, int y) throws Exception {
         validatePlayerXPlaysFirst(player);
-        validatePlayersMoveIsNotRepeated(player.getSymbol());
+        validatePlayersMoveIsNotRepeated(player);
         validatePlayerNotOverrideAlreadyPlayedTitle(x, y);
     }
 
@@ -30,8 +30,8 @@ public class Game {
         }
     }
 
-    private void validatePlayersMoveIsNotRepeated(char symbol) throws InvalidNextPlayerException {
-        if (symbol == lastPlayer.getSymbol()) {
+    private void validatePlayersMoveIsNotRepeated(Player player) throws InvalidNextPlayerException {
+        if (lastPlayer.equals(player)) {
             throw new InvalidNextPlayerException();
         }
     }
