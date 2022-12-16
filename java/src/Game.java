@@ -49,14 +49,14 @@ public class Game {
         return Player.NO_PLAYER.equals(lastPlayer);
     }
 
-    private char Winner() {
+    private Player Winner() {
         int numberOfRows = 3;
         for (int row = 0; row < numberOfRows; row++) {
             if (isRowFull(row) && isFullWithWithSameSymbol(row)) {
-                return board.TileAt(row, 0).Symbol;
+                return Player.from(board.TileAt(row, 0).Symbol);
             }
         }
-        return Player.NO_PLAYER.getSymbol();
+        return Player.NO_PLAYER;
     }
 
     private boolean isFullWithWithSameSymbol(int rowNumber) {
@@ -68,7 +68,7 @@ public class Game {
     }
 
     public Player getWinner() {
-        return Player.from(this.Winner());
+        return this.Winner();
     }
 }
 
