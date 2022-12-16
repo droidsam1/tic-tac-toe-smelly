@@ -10,11 +10,11 @@ public class Board {
     }
 
     private void buildSquareBoard() {
-        for (int i = 0; i < SQUARE_BOARD_SIZE; i++) {
-            for (int j = 0; j < SQUARE_BOARD_SIZE; j++) {
+        for (int x = 0; x < SQUARE_BOARD_SIZE; x++) {
+            for (int y = 0; y < SQUARE_BOARD_SIZE; y++) {
                 Tile tile = new Tile();
-                tile.X = i;
-                tile.Y = j;
+                tile.X = x;
+                tile.Y = y;
                 tile.Symbol = Player.NO_PLAYER.getSymbol();
                 tiles.add(tile);
             }
